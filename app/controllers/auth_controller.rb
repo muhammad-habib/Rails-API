@@ -5,6 +5,7 @@ class AuthController < ApplicationController
     access_token = auth_params['token']
     facebook = Koala::Facebook::API.new(access_token)
     obj = facebook.get_object("me?fields=id,name,picture,email")
+    obj['access_token'] = access_token
     json_response(obj)
   end
 
