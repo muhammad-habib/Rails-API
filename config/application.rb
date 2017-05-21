@@ -27,9 +27,5 @@ module RailsApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     Koala.config.api_version = 'v2.0'
-    config.action_dispatch.default_headers.merge!({
-                                                      'Access-Control-Allow-Origin' => '*',
-                                                      'Access-Control-Request-Method' => '*'
-                                                  })
   end
 end
